@@ -73,24 +73,44 @@ app.get('/ideas/edit/:id', (req, res)=>{
 app.post('/ideas', (req, res)=>{
         pageTitle = 'Add new video idea';
         let errors = [];
-        if(!req.body.title){
-            errors.push({text : 'please add a title'})
+        if(!req.body.nome){
+            errors.push({text : 'please add a nome'})
         }
-        if(!req.body.details){
-            errors.push({text : 'please add details'})
-        }    
+        if(!req.body.datanascimento){
+            errors.push({text : 'please add data de nascimento'})
+        } 
+        if(!req.body.foto){
+            errors.push({text : 'please add foto'})
+        } 
+        if(!req.body.nomepais){
+            errors.push({text : 'please add nome dos pais'})
+        }
+        if(!req.body.endereco){
+            errors.push({text : 'please add nome dos endereço'})
+        }
+        if(!req.body.data){
+            errors.push({text : 'please add nome dos data de entrada'})
+        }     
     
         if(errors.length > 0){
             res.render('ideas/add', {
                 pageTitle : pageTitle,
                 errors : errors,
-                title : req.body.title,
-                details : req.body.details
+                nome : req.body.nome,
+                datanascimento : req.body.datanascimento,
+                foto : req.body.foto,
+                nomepais : req.body.nomepais,
+                endereco : req.body.endereco,
+                data : req.body.data
             })
         }else{
             const newUser = {
-                            title : req.body.title,
-                            details : req.body.details
+                    nome : req.body.nome,
+                    datanascimento : req.body.datanascimento,
+                    foto : req.body.foto,
+                    nomepais : req.body.nomepais,
+                    endereco : req.body.endereco,
+                    data : req.body.data
                         };
                         new Idea(newUser)
                             .save()
@@ -108,8 +128,12 @@ app.put('/ideas/:id', (req, res)=>{
         })
         .then(idea => {
             //new values from form
-            idea.title = req.body.title;
-            idea.details = req.body.details;
+            idea.nome = req.body.nome;
+            idea.datanascimento = req.body.datanascimento;
+            idea.foto = req.body.foto;
+            idea.nomepais = req.body.nomepais;
+            idea.endereco = req.body.endereco;
+            idea.data = req.body.data;
     
             idea.save()
                 .then(idea => {

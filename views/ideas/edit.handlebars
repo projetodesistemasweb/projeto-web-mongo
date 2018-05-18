@@ -9,12 +9,32 @@
      <form action="/ideas/{{idea.id}}?_method=PUT" method="post">
      <input type="hidden" name="_method" value="PUT" />
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title" class="form-control" value="{{idea.title}}" required>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control" value="{{idea.nome}}"required>
         </div>
         <div class="form-group">
-            <label for="details">Details</label>
-            <textarea class="form-control" name="details" id="" cols="30" rows="10" required>{{idea.details}}</textarea>
+            <label for="datanascimento">Data de Nascimento</label>
+            <input type="text" name="datanascimento" class="form-control" value="{{idea.datanascimento}}"required>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="foto" class="form-control" value="{{idea.foto}}"required>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="foto" class="form-control" value="{{idea.foto}}"required>
+        </div>
+        <div class="form-group">
+            <label for="nomepais">Nome dos Pais</label>
+            <input type="text" name="nomepais" class="form-control" value="{{idea.nomepais}}"required>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" name="endereco" class="form-control" value="{{idea.endereco}}"required>
+        </div>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="text" name="data" class="form-control" value="{{idea.data}}"required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
