@@ -1,4 +1,4 @@
-{{#each ideas}}
+{{#each alunos}}
     <div class="card card-body mb-2">
         <h4>{{nome}}</h4>
         <p>{{datanascimento}}</p>
@@ -7,8 +7,8 @@
         <p>{{endereco}}</p>
         <p>{{data}}</p>
         <a class="btn btn-dark btn-block mb-2" 
-        href="/ideas/edit/{{id}}">Edit</a>
-        <form method="post" action="/ideas/{{id}}?_method=DELETE">
+        href="/alunos/edit/{{id}}">Edit</a>
+        <form method="post" action="/alunos/{{id}}?_method=DELETE">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" class="btn btn-danger btn-block" value="Delete">
         </form>        

@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//create Schema
-const IdeaSchema = new Schema({
-    nome : {
+//Create Schema Profissional
+const ProfissionalSchema = new Schema({
+
+    nome: {
         type: String,
-        required : true
+        required: true
     },
-    date : {
-        type : Date,
-        default : Date.now
-    },
-    datanascimento: {
+    datanascimento:{
         type: String,
         required: true
     },
@@ -19,19 +16,21 @@ const IdeaSchema = new Schema({
         type: String,
         required: true
     },
-    nomepais: { 
+    formacaoacad: {
         type: String,
         required: true
     },
-    endereco: {
+    endereco:{
         type: String,
         required: true
     },
-    data: {
+    telefone: {
         type: String,
         required: true
-    } 
+    },
+    atividade: {
+        type: String,
+        required: true
+    },
 });
-
-//connect schema to model
-mongoose.model('ideas', IdeaSchema); 
+mongoose.model('profissionais', ProfissionalSchema);
