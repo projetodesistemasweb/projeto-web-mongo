@@ -1,0 +1,41 @@
+{{#each errors}}
+<div class="alert alert-danger">
+    {{text}}
+</div>
+{{else}}
+{{/each}}
+<div class="card card-body">
+    <h3>{{pageTitle}}</h3>
+     <form action="/profissionais/{{profissional.id}}?_method=PUT" method="post">
+     <input type="hidden" name="_method" value="PUT" />
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control" value="{{profissional.nome}}"required>
+        </div>
+        <div class="form-group">
+            <label for="datanascimento">Data de Nascimento</label>
+            <input type="text" name="datanascimento" class="form-control" value="{{profissional.datanascimento}}"required>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="foto" class="form-control" value="{{profissional.foto}}"required>
+        </div>
+        <div class="form-group">
+            <label for="nomepais">Formação Academica</label>
+            <input type="text" name="formacaoacad" class="form-control" value="{{profisssional.nomepais}}"required>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" name="endereco" class="form-control" value="{{profissional.endereco}}"required>
+        </div>
+        <div class="form-group">
+            <label for="data">Telefone</label>
+            <input type="text" name="telefone" class="form-control" value="{{profissional.data}}"required>
+        </div>
+        <div class="form-group">
+            <label for="data">Atividade</label>
+            <input type="text" name="atividade" class="form-control" value="{{profissional.data}}"required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

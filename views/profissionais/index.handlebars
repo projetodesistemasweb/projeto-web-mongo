@@ -1,18 +1,19 @@
-{{#each alunos}}
+{{#each profissionais}}
     <div class="card card-body mb-6">
         <h4>{{nome}}</h4>
         <p>{{datanascimento}}</p>
         <p>{{foto}}</p>
-        <p>{{nomepais}}</p>
+        <p>{{formacaoacad}}</p>
         <p>{{endereco}}</p>
-        <p>{{data}}</p>
+        <p>{{telefone}}</p>
+        <p>{{atividade}}</p>
         <a class="btn btn-dark btn-block mb-6" 
-        href="/alunos/edit/{{id}}">Edit</a>
-        <form method="post" action="/alunos/{{id}}?_method=DELETE">
+        href="/profissionais/edit/{{id}}">Edit</a>
+        <form method="post" action="/profissionais/{{id}}?_method=DELETE">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" class="btn btn-danger btn-block" value="Delete">
         </form>        
     </div>
 {{else}}
-<p>Não Existe Alunos Cadastrados</p>
+<p>Não Existe Profissionais Cadastrados</p>
 {{/each}}
