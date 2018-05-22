@@ -1,0 +1,49 @@
+{{#each errors}}
+<div class="alert alert-danger">
+    {{text}}
+</div>
+{{else}}
+{{/each}}
+<div class="card card-body">
+    <h3>{{pageTitle}}</h3>
+     <form action="/classes/{{classe.id}}?_method=PUT" method="post">
+     <input type="hidden" name="_method" value="PUT" />
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control" value="{{classe.nome}}"required>
+        </div>
+        <div class="form-group">
+            <label for="cor">Cor</label>
+            <select name="cor" class="form-control">
+                <option value="{{classe.cor}}"></option>
+                <option type="text" value="Rosa">Rosa</option>
+                <option type="text" value="Roxa">Roxa</option>
+                <option type="text" value="Vermelho">Vermelho</option>
+                <option type="text" value="Verde">Verde</option>
+                <option type="text" value="Azul">Azul</option>
+                <option type="text" value="Amarelo">Amarelo</option>
+                <option type="text" value="Prata">Prata</option>
+                <option type="text" value="Laranja">Laranja</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="numerosala">Número da Sala</label>
+            <input type="text" name="numerosala" value="{{classe.numerosala}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="capacidade">Capacidade</label>
+            <input type="text" name="capacidade" value="{{classe.capacidade}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="profissionais">Profissionais</label>
+            <select name="profissionais" class="form-control">
+                <option value="{{classe.profisional}}"></option>
+                <option type="text" value="Professor">Professor</option>
+                <option type="text" value="Coordenador">Coordenador</option>
+                <option type="text" value="Cadastramentos">Cadastramento</option>
+                <option type="text" value="Música">Música</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+</div>
