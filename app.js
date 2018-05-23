@@ -14,13 +14,22 @@ const alunos = require('./rotas/alunos');
 const profissionais = require('./rotas/profissionais');
 const classes = require('./rotas/classes');
 
+// Handlebars Helpers
+const {
+    formatDate
+}= require('./helpers/hbs');
+
  // Connect to mongoose
 mongoose.connect('mongodb://localhost:27017/projetoWeb-dev')
     .then(()=>  console.log('MongoDB connected'))
     .catch(err => console.log(`could not connect ${err}`));
 
 //handlebars middleware
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));  
+app.engine('handlebars', exphbs({
+    helpers:{
+        formatDate:formatDate
+    },
+    defaultLayout: 'main'}));  
 app.set('view engine', 'handlebars');
 
 // body parser middleware

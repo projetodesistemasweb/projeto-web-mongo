@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
             <label for="datanascimento">data nascimento</label>
-            <input type="text" name="datanascimento" class="form-control" required>
+            <input type="date" name="datanascimento" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="foto">Foto</label>
@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="text" name="data" class="form-control"required>
+            <span class="form-control" name="data"required>{{formatDate alunos.datanascimento 'DD/MM/YYYY'}}</span>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

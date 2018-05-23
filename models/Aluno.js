@@ -12,7 +12,7 @@ const AlunoSchema = new Schema({
         default : Date.now
     },
     datanascimento: {
-        type: String,
+        type: Date,
         required: true
     },
     foto: {
@@ -28,8 +28,8 @@ const AlunoSchema = new Schema({
         required: true
     },
     data: {
-        type: String,
-        required: true
+        type: Date,
+        required: false
     } 
 });
 
